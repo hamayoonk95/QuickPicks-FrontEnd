@@ -52,7 +52,10 @@ const RandomMovie = () => {
     } = movie;
 
     // split the overview into words, reduce the number of words to 30
-    const words = overview.split(" ");
+    if(overview) {
+      const words = overview.split(" ");
+    }
+    
     const reducedWords = words.slice(0, 30);
     const reducedDescription = reducedWords.join(" ");
 
