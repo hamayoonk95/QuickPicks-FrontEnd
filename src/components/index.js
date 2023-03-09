@@ -1,0 +1,13 @@
+export { default as Navbar } from "./Navbar/Navbar";
+export { default as RandomMovie } from "./Random-movie/Random-movie";
+export { default as PopularMovies } from "./Popular-movies/Popular-movies";
+export { default as Movie } from "./Movie/Movie";
+export { default as StreamingPlatformIcon } from "./StreamingPlatformIcon/StreamingPlatformIcon";
+export { default as SearchedMovies } from "./SearchedMovies/SearchedMovies";
+export { default as RouletteSearch } from "./RouletteSearch/RouletteSearch";
+export { default as Login } from "./Login/Login";
+export { default as Register } from "./Register/Register";
+export { default as FlashMsg } from "./FlashMsg/FlashMsg";
+export { default as WatchedHours } from "./WatchedHours/WatchedHours";
+export { default as WatchedGenres } from "./WatchedGenres/WatchedGenres";
+export { default as FavActors } from "./FavActors/FavActors";

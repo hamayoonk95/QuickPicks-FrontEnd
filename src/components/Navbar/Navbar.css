@@ -1,0 +1,158 @@
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 550;
+  border-radius: 0px 0px 5px 5px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Logo size */
+.logo {
+  width: 55px;
+  height: 55px;
+}
+
+/* Styles for navbar links */
+.navbar a {
+  padding-right: 1.2rem;
+  display: block;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+/* Styles for active links in navbar */
+.active a {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Styles for navbar links on hover */
+.navbar a:hover {
+  color: var(--secondary-color);
+  transform: scale(1.2);
+}
+
+/* Styles for navigation container */
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles for nav-links list */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+/* adjust padding for each link in nav-links */
+.nav-links .link {
+  padding: 0 1.2rem;
+}
+
+/* Hides navigation link inside hamburger menu when screen is resized */
+.nav-menu ul {
+  display: none;
+}
+
+/* Media query for screen size below 850px */
+@media screen and (max-width: 850px) {
+  /* padding adjusted for navbar container */
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  /* hides nav-links from the display to show hamburger menu */
+  .nav-links {
+    display: none;
+  }
+
+  /* styles for hamburger menu and set it to visible */
+  .hambrgr-menu {
+    padding-right: 1rem;
+    visibility: visible;
+    width: 5rem;
+    height: 4rem;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  /* style for the hamburger menu on hover */
+  .hambrgr-menu:hover > * {
+    border-color: var(--secondary-color);
+    transition: all 0.3s;
+  }
+
+  /* styles for each line of hamburger menu */
+  .ham-line {
+    border-radius: 10%;
+    width: 50%;
+    border: 2px solid var(--text-color);
+    margin: 3px;
+  }
+
+  /* style for navigation menu dropdown after hamburger is clicked */
+  .nav-menu {
+    background-color: var(--primary-color);
+    position: fixed;
+    left: 0;
+    top: 4rem;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  /* styles for navigation menu links */
+  .nav-menu ul {
+    display: inline-block;
+    position: relative;
+    bottom: 4rem;
+    right: 1rem;
+    text-align: center;
+    list-style: none;
+  }
+
+  /* styles for each item in the list in navigation menu */
+  .nav-menu-links {
+    font-weight: 550;
+    font-size: large;
+    margin: 4rem 0;
+  }
+}
+
+/* Animation for Hamburger Icon */
+.top-line-animate {
+  transform: translate(0px, 10px) rotate(45deg);
+}
+.middle-line-animate {
+  opacity: 0;
+}
+.bottom-line-animate {
+  transform: translate(0px, -10px) rotate(-45deg);
+}
+.ease-transition {
+  transition: all 0.2s ease;
+}
+
+
+/* Define the slideIn animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

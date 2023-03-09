@@ -1,0 +1,58 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 40%;
+  height: 25rem;
+  margin: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 75%;
+  border-radius: 10px;
+}
+
+.movie-info {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movie-title {
+  font-weight: bolder;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-year {
+  color: #555;
+}
+
+@media screen and (min-width: 700px) {
+  .movie {
+    width: 27%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .movie {
+    width: 20%;
+  }
+
+  .movie-title {
+    font-size: 1.2rem;
+    padding: 0 0 0.5rem 0;
+  }
+}

@@ -1,0 +1,11 @@
+.App-header {
+    margin-bottom: 2rem;
+}
+
+.body {
+    margin-top: 7rem;
+}
+
+.scale {
+    transform: scale(1.1);
+}

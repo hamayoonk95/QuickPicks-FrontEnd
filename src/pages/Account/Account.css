@@ -1,0 +1,19 @@
+.account-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.flashMsg {
+    position: absolute;
+    top: 6rem;
+}
+
+.new-account {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.new-account:hover {
+    cursor: pointer;
+    color: var(--secondary-color);
+}
