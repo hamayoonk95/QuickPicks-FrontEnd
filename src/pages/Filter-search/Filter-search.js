@@ -18,7 +18,7 @@ const FilterSearch = () => {
    // Async function to fetch data from DB and pass factors as parameters
   const getMovie = async (mood, timeOfDay, ratings, occassion) => {
     const response = await fetch(
-      `/filter-movies?mood=${mood}&timeOfDay=${timeOfDay}&ratings=${ratings}&occassion=${occassion}&releaseDate=${releaseDate}`
+      `https://www.doc.gold.ac.uk/usr/391/filter-movies?mood=${mood}&timeOfDay=${timeOfDay}&ratings=${ratings}&occassion=${occassion}&releaseDate=${releaseDate}`
     );
     const movie = await response.json();
     id = movie.id;

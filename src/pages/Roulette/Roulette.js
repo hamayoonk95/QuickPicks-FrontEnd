@@ -69,7 +69,7 @@ const Roulette = () => {
       setTimeout(async () => {
         try {
           // fetch movies matching the search query
-          const response = await fetch(`/rouletteSearch?query=${values}`);
+          const response = await fetch(`https://www.doc.gold.ac.uk/usr/391/rouletteSearch?query=${values}`);
           // parses the response JSON data
           const movies = await response.json();
           // set the movies array with the data

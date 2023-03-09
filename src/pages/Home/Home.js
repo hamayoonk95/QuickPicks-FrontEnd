@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       // Make an API request to the server to get popular movies data
-      const response = await fetch("/get-popular-movies");
+      const response = await fetch("https://www.doc.gold.ac.uk/usr/391/get-popular-movies");
       // Parse the response data as JSON
       const data = await response.json();
       // Update the movies state with the fetched data

@@ -28,7 +28,7 @@ const MoviePage = () => {
   // Fetch movie data from API when the id parameter changes
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await fetch(`/movie/${id}`);
+      const response = await fetch(`https://www.doc.gold.ac.uk/usr/391/movie/${id}`);
       const result = await response.json();
       setMovie(result);
     };

@@ -29,7 +29,7 @@ const Searchbar = () => {
       setTimeout(async () => {
         try {
           // Search for the movie in the DB using searchInput
-          const response = await fetch(`/search?query=${searchInput}`);
+          const response = await fetch(`https://www.doc.gold.ac.uk/usr/391/search?query=${searchInput}`);
           const data = await response.json();
           // Update searched Movies state with the returned data
           setMovies(data);

@@ -80,7 +80,7 @@ const Register = ({ toggle, setMsg, responseType, setResponseType }) => {
     // if length of error is 0 then submit a post request to /user-register with user details as parameters
     if (Object.keys(errors).length === 0) {
       try {
-        const response = await axios.post("/user-register", {
+        const response = await axios.post("https://www.doc.gold.ac.uk/usr/391/user-register", {
           firstName: firstName,
           lastName: lastName,
           username: username,

@@ -10,7 +10,7 @@ export const useRefreshToken = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get("/token");
+      const response = await axios.get("https://www.doc.gold.ac.uk/usr/391/token");
       setToken(response.data.accessToken);
       const decoded = jwt_decode(response.data.accessToken);
       setExpire(decoded.exp);
@@ -30,7 +30,7 @@ export const useAxiosJWT = (token, setToken, setExpire ,expire) => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get("/token");
+        const response = await axios.get("https://www.doc.gold.ac.uk/usr/391/token");
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwt_decode(response.data.accessToken);

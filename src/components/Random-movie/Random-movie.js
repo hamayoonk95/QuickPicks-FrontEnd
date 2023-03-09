@@ -14,7 +14,7 @@ const RandomMovie = () => {
   // fetch data when component mounts
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/get-random-movie"); // get request to fetch a random movie
+      const response = await fetch("https://www.doc.gold.ac.uk/usr/391/get-random-movie"); // get request to fetch a random movie
       const data = await response.json(); // extract the JSON data from the response
       setMovie(data); // update the movie state with the fetched data
     };
@@ -23,7 +23,7 @@ const RandomMovie = () => {
 
   // function to get a random movie
   const getRandom = async () => {
-    const response = await fetch("/get-random-movie"); // GET request to fetch a random movie
+    const response = await fetch("https://www.doc.gold.ac.uk/usr/391/get-random-movie"); // GET request to fetch a random movie
     const movieData = await response.json(); // extract the JSON data from response
     setPrevMovies([...prevMovies, movie]); // add the current movie to the list of previous movies
     setCurrentIdx(currentIdx + 1); // increment the index of the current movie
