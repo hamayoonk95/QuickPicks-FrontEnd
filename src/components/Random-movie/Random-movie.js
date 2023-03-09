@@ -101,14 +101,14 @@ const RandomMovie = () => {
           <div className="info-container">
             <div className="title-rating">
               <h2 onClick={() => navigate(`/movie/${id}`)} className="title">
-                {title.split(" ").slice(0, 5).join(" ")} ({release_date})
+                {title && title.split(" ").slice(0, 5).join(" ")} ({release_date})
               </h2>
               {vote_average > 0 ? (
                 <div className="rating">{vote_average}</div>
               ) : null}
             </div>
             {/* render genres, split genre by '-' and join by ', ' */}
-            <div className="genre">{genres.split("-").join(", ")}</div>
+            <div className="genre">{genres && genres.split("-").join(", ")}</div>
             {/* render description, if word count > 30 display three dots ... */}
             <p className="description">
               {reducedDescription} {words.length > 30 && "..."}
