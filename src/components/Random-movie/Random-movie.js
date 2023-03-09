@@ -29,7 +29,7 @@ const RandomMovie = () => {
     setCurrentIdx(currentIdx + 1); // increment the index of the current movie
     setMovie(movieData); // update the movie state with the fetched data
   };
-
+  
   // function to go to the previous movie
   const goToPrev = () => {
     if (currentIdx > 0 && prevMovies.length > 0) {
@@ -52,10 +52,7 @@ const RandomMovie = () => {
     } = movie;
 
     // split the overview into words, reduce the number of words to 30
-    if(overview) {
-      const words = overview.split(" ");
-    }
-    
+    const words = overview.split(" ");
     const reducedWords = words.slice(0, 30);
     const reducedDescription = reducedWords.join(" ");
 
