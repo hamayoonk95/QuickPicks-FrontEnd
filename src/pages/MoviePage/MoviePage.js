@@ -22,13 +22,15 @@ const MoviePage = () => {
   const [movie, setMovie] = useState(null);
   // State to hold the available streaming services for the movie
   const [streamingService, setStreamingService] = useState(null);
-   // State to manage loading status
+  // State to manage loading status
   const [isLoading, setIsLoading] = useState(true);
 
   // Fetch movie data from API when the id parameter changes
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await fetch(`https://www.doc.gold.ac.uk/usr/391/movie/${id}`);
+      const response = await fetch(
+        `https://www.doc.gold.ac.uk/usr/391/movie/${id}`
+      );
       const result = await response.json();
       setMovie(result);
     };
@@ -64,6 +66,11 @@ const MoviePage = () => {
   const handleWatch = async () => {
     try {
       console.log(token);
+      // Refresh JWT token when it is available in local storage
+      if (localStorage.accessToken) {
+        refreshToken();
+      }
+      console.log(token);
       const response = await axiosJWT.post(
         "https://www.doc.gold.ac.uk/usr/391/watch-movie",
         {
@@ -97,7 +104,7 @@ const MoviePage = () => {
 
   return (
     <div className="container">
-    {/* Displays error message to the user */}
+      {/* Displays error message to the user */}
       <div className="flash-msg">
         {resMsg && <FlashMsg msg={resMsg} type={responseType} />}
       </div>
