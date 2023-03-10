@@ -16,6 +16,7 @@ export const useRefreshToken = () => {
           headers: {
             Authorization: `Bearer ${localStorage.accessToken}`,
           },
+          withCredentials: true,
         }
       );
       setToken(response.data.accessToken);
