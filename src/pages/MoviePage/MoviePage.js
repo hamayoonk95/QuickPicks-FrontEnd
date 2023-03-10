@@ -36,11 +36,11 @@ const MoviePage = () => {
   }, [id]);
 
   // Refresh JWT token when it is available in local storage
-  useEffect(() => {
-    if (localStorage.accessToken) {
-      refreshToken();
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (localStorage.accessToken) {
+  //     refreshToken();
+  //   }
+  // }, [token]);
 
   // Fetch available streaming services for the movie
   // useEffect(() => {
