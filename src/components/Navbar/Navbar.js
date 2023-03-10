@@ -92,9 +92,9 @@ const Navbar = () => {
               </a>
             ) : (
               // if the user is not logged in, render a user icon (links to login page)
-              <a href="/account" onClick={loginHandler}>
+              <Link to="/account" onClick={loginHandler}>
                 <FaUser />
-              </a>
+              </Link>
             )}
           </li>
         </ul>
