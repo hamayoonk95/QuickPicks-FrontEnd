@@ -53,6 +53,7 @@ const Login = ({ setMsg, responseType, setResponseType }) => {
       });
       // if successful, saves token to localStorage and navigates to analytics page
       localStorage.setItem("accessToken", response.data.accessToken);
+      localStorage.setItem("refreshToken", response.data.refreshToken);
       navigate("/");
     } catch (err) {
       if (err.response) {

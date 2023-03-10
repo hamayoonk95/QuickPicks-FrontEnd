@@ -87,9 +87,9 @@ const Navbar = () => {
           <li className={`link ${pathname === "/account" ? "active" : ""}`}>
             {loggedIn ? (
               // if the user is logged in, renders a logout link
-              <a className="link" href="/account" onClick={loginHandler}>
+              <Link className="link" to="/account" onClick={loginHandler}>
                 log out
-              </a>
+              </Link>
             ) : (
               // if the user is not logged in, render a user icon (links to login page)
               <Link to="/account" onClick={loginHandler}>
