@@ -49,7 +49,7 @@ const RandomMovie = () => {
       vote_average,
       genres,
       id,
-    } = movie[0];
+    } = movie;
     // split the overview into words, reduce the number of words to 30
     const words = overview.split(" ");
     const reducedWords = words.slice(0, 30);

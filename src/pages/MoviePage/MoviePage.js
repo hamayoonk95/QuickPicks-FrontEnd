@@ -30,7 +30,7 @@ const MoviePage = () => {
     const fetchMovie = async () => {
       const response = await fetch(`https://www.doc.gold.ac.uk/usr/391/movie/${id}`);
       const result = await response.json();
-      setMovie(result[0]);
+      setMovie(result);
     };
     fetchMovie();
   }, [id]);
