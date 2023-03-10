@@ -52,7 +52,7 @@ const Login = ({ setMsg, responseType, setResponseType }) => {
       });
       // if successful, saves token to localStorage and navigates to analytics page
       localStorage.setItem("accessToken", response.data.accessToken);
-      navigate("/analytics");
+      navigate("/");
     } catch (err) {
       if (err.response) {
         // if server responds with error, then display error message
