@@ -17,9 +17,9 @@ const Analytics = () => {
 
   
   // refreshes the accesstoken when it expires
-  useEffect(() => {
-    refreshToken();
-  }, [token]);
+  // useEffect(() => {
+  //   refreshToken();
+  // }, [token]);
 
   // calls getUsers() which fetches user data when the component mounts or token changes
   useEffect(() => {
