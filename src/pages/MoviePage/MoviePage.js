@@ -38,11 +38,11 @@ const MoviePage = () => {
   }, [id]);
 
   // Refresh JWT token when it is available in local storage
-  // useEffect(() => {
-  //   if (localStorage.accessToken) {
-  //     refreshToken();
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    if (localStorage.accessToken) {
+      refreshToken();
+    }
+  }, [token]);
 
   // Fetch available streaming services for the movie
   // useEffect(() => {
@@ -65,12 +65,12 @@ const MoviePage = () => {
   // Handle watch button click
   const handleWatch = async () => {
     try {
-      console.log(token);
-      // Refresh JWT token when it is available in local storage
+      // console.log(token);
+      // // Refresh JWT token when it is available in local storage
       // if (localStorage.accessToken) {
       //   refreshToken();
       // }
-      // console.log(token);
+      console.log(token);
       const response = await axiosJWT.post(
         "https://www.doc.gold.ac.uk/usr/391/watch-movie",
         {
@@ -78,7 +78,7 @@ const MoviePage = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${localStorage.accesstoken}`,
           },
         }
       );
