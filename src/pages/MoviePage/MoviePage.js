@@ -67,10 +67,10 @@ const MoviePage = () => {
     try {
       console.log(token);
       // Refresh JWT token when it is available in local storage
-      if (localStorage.accessToken) {
-        refreshToken();
-      }
-      console.log(token);
+      // if (localStorage.accessToken) {
+      //   refreshToken();
+      // }
+      // console.log(token);
       const response = await axiosJWT.post(
         "https://www.doc.gold.ac.uk/usr/391/watch-movie",
         {
