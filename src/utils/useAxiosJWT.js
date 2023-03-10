@@ -14,9 +14,9 @@ export const useRefreshToken = () => {
         "https://www.doc.gold.ac.uk/usr/391/token",
         {
           headers: {
-            Authorization: `Bearer ${localStorage.accessToken}`,
+            Authorization: `Bearer ${localStorage.refreshToken}`,
           },
-          withCredentials: true,
+          withCredentials: true
         }
       );
       setToken(response.data.accessToken);
@@ -41,7 +41,7 @@ export const useAxiosJWT = (token, setToken, setExpire, expire) => {
         const response = await axios.get(
           "https://www.doc.gold.ac.uk/usr/391/token"
         );
-        config.headers.Authorization = `Bearer ${response.data.accessToken}`;
+        config.headers.Authorization = `Bearer ${response.data.refreshToken}`;
         setToken(response.data.accessToken);
         const decoded = jwt_decode(response.data.accessToken);
         setExpire(decoded.exp);
