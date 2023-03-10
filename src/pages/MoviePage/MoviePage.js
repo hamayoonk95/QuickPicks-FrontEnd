@@ -78,7 +78,7 @@ const MoviePage = () => {
         },
         {
           headers: {
-            Authorization: `Bearer ${localStorage.accesstoken}`,
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
           },
         }
       );
