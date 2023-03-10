@@ -47,6 +47,7 @@ const Login = ({ setMsg, responseType, setResponseType }) => {
     try {
       // submit form with entered username and password to /user-login route
       const response = await axios.post("https://www.doc.gold.ac.uk/usr/391/user-login", {
+        withCredental: true,
         username: username,
         password: password,
       });
