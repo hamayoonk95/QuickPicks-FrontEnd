@@ -37,7 +37,7 @@ const Navbar = () => {
   // fuction to log out user if they are logged in
   const logout = async () => {
     try {
-      await axios.delete("/logout");
+      await axios.delete("https://www.doc.gold.ac.uk/usr/391/logout");
     } catch (err) {
       console.log(err);
     }
