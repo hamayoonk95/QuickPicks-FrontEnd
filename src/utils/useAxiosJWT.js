@@ -14,7 +14,6 @@ export const useRefreshToken = () => {
         "https://www.doc.gold.ac.uk/usr/391/token",
         {
           withCredentials: true,
-          credentials: "include",
           headers: {
             Authorization: `Bearer ${localStorage.accessToken}`,
           },
