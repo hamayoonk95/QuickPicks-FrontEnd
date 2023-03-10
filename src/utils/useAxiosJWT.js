@@ -31,7 +31,7 @@ export const useRefreshToken = () => {
 };
 
 export const useAxiosJWT = (token, setToken, setExpire, expire) => {
-  const axiosJWT = axios.create();
+  const axiosJWT = axios.create({withCredentials: true});
 
   axiosJWT.interceptors.request.use(
     async (config) => {
