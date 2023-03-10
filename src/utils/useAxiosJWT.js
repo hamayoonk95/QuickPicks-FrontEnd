@@ -13,7 +13,6 @@ export const useRefreshToken = () => {
       const response = await axios.get(
         "https://www.doc.gold.ac.uk/usr/391/token",
         {
-          withCredentials: true,
           headers: {
             Authorization: `Bearer ${localStorage.accessToken}`,
           },
