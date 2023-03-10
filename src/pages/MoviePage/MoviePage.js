@@ -65,7 +65,7 @@ const MoviePage = () => {
     try {
       console.log(token);
       const response = await axiosJWT.post(
-        "/watch-movie",
+        "https://www.doc.gold.ac.uk/usr/391/watch-movie",
         {
           movie_id: id,
         },
