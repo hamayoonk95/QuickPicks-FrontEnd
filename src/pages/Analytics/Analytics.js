@@ -31,7 +31,7 @@ const Analytics = () => {
   // Fetch user data and their watched movies from backend
   const getUsers = async () => {
     try {
-      const response = await axiosJWT.get("analytics", {
+      const response = await axiosJWT.get("https://www.doc.gold.ac.uk/usr/391/analytics", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
