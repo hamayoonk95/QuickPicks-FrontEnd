@@ -6,9 +6,8 @@ import prime from "../../assets/prime.png";
 import disneyPlus from "../../assets/disney+.png";
 import disney from "../../assets/disney.png";
 
-const StreamingPlatformIcon = ({src, link, title}) => {
+const StreamingPlatformIcon = ({src, link}) => {
     let icon;
-    console.log(title)
     switch (src) {
         case 'netflix':
         icon = netflix;
@@ -26,12 +25,10 @@ const StreamingPlatformIcon = ({src, link, title}) => {
         icon = disney;
         break;
         default:
-            // Create a Google search link for the movie title
-            const googleSearch = `https://www.google.com/search?q=${title}`;
-            return <a href={googleSearch}>Google search</a>;
+            icon = null;
     }
 
-    return <a href={link}><img className="s-icon" src={icon} alt="Hello" /></a>;
+    return icon ? <a href={link}><img className="s-icon" src={icon} alt="Hello" /></a> : null;
 }
 
 export default StreamingPlatformIcon;

@@ -112,17 +112,27 @@ const MoviePage = () => {
       {/* If streaming services are available for the movie, displays them */}
 
       <div className="streaming-icons">
-        {streamingService &&
-          streamingService.map((service) =>
-            movie ? (
-              <StreamingPlatformIcon
-                title={movie.title}
-                key={service.source}
-                src={service.source}
-                link={service.link}
-              />
-            ) : null
-          )}
+      {streamingService && streamingService.length > 0 ? (
+    streamingService.map((service) =>
+      movie ? (
+        <StreamingPlatformIcon
+          key={service.source}
+          src={service.source}
+          link={service.link}
+        />
+      ) : null
+    )
+  ) : (
+    <a
+      href={`https://www.google.com/search?q=${encodeURIComponent(
+        movie?.title || ""
+      )}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Search Google for "{movie?.title}"
+    </a>
+  )}
       </div>
 
       {/* Buttons to handleWatch which adds movie to the database and associates it with the user, or go to PrevPage */}
