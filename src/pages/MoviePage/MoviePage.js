@@ -110,7 +110,9 @@ const MoviePage = () => {
       ) : null}
 
       {/* If streaming services are available for the movie, displays them */}
-      {movie ? (
+      {movie ? 
+      console.log(movie)
+      (
         <div className="streaming-icons">
           {/* {streamingService &&
           streamingService.map((service) => (
