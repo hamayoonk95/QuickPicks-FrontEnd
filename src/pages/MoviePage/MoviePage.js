@@ -51,7 +51,7 @@ const MoviePage = () => {
         const data = await getAvailability(movie.tmdb_id);
         if (data.length > 0) {
           setStreamingService(data[0].sources);
-          console.log(streamingService)
+          console.log(streamingService);
           setIsLoading(false);
         }
       }
@@ -110,19 +110,20 @@ const MoviePage = () => {
       ) : null}
 
       {/* If streaming services are available for the movie, displays them */}
-      {movie ? (
-        <div className="streaming-icons">
-          {streamingService &&
-          streamingService.map((service) => (
-            <StreamingPlatformIcon
-              title={movie.title}
-              key={service.source}
-              src={service.source}
-              link={service.link}
-            />
-          ))}
-        </div>
-      ) : null}
+
+      <div className="streaming-icons">
+        {streamingService &&
+          streamingService.map((service) =>
+            movie ? (
+              <StreamingPlatformIcon
+                title={movie.title}
+                key={service.source}
+                src={service.source}
+                link={service.link}
+              />
+            ) : null
+          )}
+      </div>
 
       {/* Buttons to handleWatch which adds movie to the database and associates it with the user, or go to PrevPage */}
       <div className="buttons">
