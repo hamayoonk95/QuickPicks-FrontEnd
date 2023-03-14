@@ -33,7 +33,6 @@ const MoviePage = () => {
       );
       const result = await response.json();
       setMovie(result);
-      console.log(movie)
     };
     fetchMovie();
   }, [id]);
@@ -66,7 +65,6 @@ const MoviePage = () => {
   // Handle watch button click
   const handleWatch = async () => {
     try {
-
       const response = await axiosJWT.post(
         "https://www.doc.gold.ac.uk/usr/391/watch-movie",
         {
@@ -112,8 +110,9 @@ const MoviePage = () => {
       ) : null}
 
       {/* If streaming services are available for the movie, displays them */}
-      <div className="streaming-icons">
-        {/* {streamingService &&
+      {movie ? (
+        <div className="streaming-icons">
+          {/* {streamingService &&
           streamingService.map((service) => (
             <StreamingPlatformIcon
               key={service.source}
@@ -121,10 +120,16 @@ const MoviePage = () => {
               link={service.link}
             />
           ))} */}
-        <StreamingPlatformIcon title={movie.title} key={"abc"} src={"netf"} link={"//"} />
-        {/* <StreamingPlatformIcon key={"aa"} src={"disney_plus"} link={"//"} />
+          <StreamingPlatformIcon
+            title={movie.title}
+            key={"abc"}
+            src={"netf"}
+            link={"//"}
+          />
+          {/* <StreamingPlatformIcon key={"aa"} src={"disney_plus"} link={"//"} />
         <StreamingPlatformIcon key={"aab"} src={"vudu"} link={"//"} /> */}
-      </div>
+        </div>
+      ) : null}
 
       {/* Buttons to handleWatch which adds movie to the database and associates it with the user, or go to PrevPage */}
       <div className="buttons">
