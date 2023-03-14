@@ -25,10 +25,12 @@ const StreamingPlatformIcon = ({src, link}) => {
         icon = disney;
         break;
         default:
-            icon = null;
+            // Create a Google search link for the movie title
+            const googleSearch = `https://www.google.com/search?q=${title}`;
+            return <a href={googleSearch}>Google search</a>;
     }
 
-    return icon ? <a href={link}><img className="s-icon" src={icon} alt="Hello" /></a> : null;
+    return <a href={link}><img className="s-icon" src={icon} alt="Hello" /></a>;
 }
 
 export default StreamingPlatformIcon;

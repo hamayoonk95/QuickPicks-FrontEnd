@@ -65,12 +65,7 @@ const MoviePage = () => {
   // Handle watch button click
   const handleWatch = async () => {
     try {
-      // console.log(token);
-      // // Refresh JWT token when it is available in local storage
-      // if (localStorage.accessToken) {
-      //   refreshToken();
-      // }
-      console.log(token);
+
       const response = await axiosJWT.post(
         "https://www.doc.gold.ac.uk/usr/391/watch-movie",
         {
@@ -125,9 +120,9 @@ const MoviePage = () => {
               link={service.link}
             />
           ))} */}
-        <StreamingPlatformIcon key={"abc"} src={"netflix"} link={"//"} />
-        <StreamingPlatformIcon key={"aa"} src={"disney_plus"} link={"//"} />
-        <StreamingPlatformIcon key={"aab"} src={"vudu"} link={"//"} />
+        <StreamingPlatformIcon title={movie.title} key={"abc"} src={"netf"} link={"//"} />
+        {/* <StreamingPlatformIcon key={"aa"} src={"disney_plus"} link={"//"} />
+        <StreamingPlatformIcon key={"aab"} src={"vudu"} link={"//"} /> */}
       </div>
 
       {/* Buttons to handleWatch which adds movie to the database and associates it with the user, or go to PrevPage */}
