@@ -46,12 +46,12 @@ const MoviePage = () => {
 
   // Fetch available streaming services for the movie
   useEffect(() => {
-    console.log(movie);
     const fetchData = async () => {
       if (movie) {
         const data = await getAvailability(movie.tmdb_id);
         if (data.length > 0) {
           setStreamingService(data[0].sources);
+          console.log(streamingService)
           setIsLoading(false);
         }
       }

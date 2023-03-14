@@ -8,6 +8,7 @@ import disney from "../../assets/disney.png";
 
 const StreamingPlatformIcon = ({src, link, title}) => {
     let icon;
+    console.log(title)
     switch (src) {
         case 'netflix':
         icon = netflix;
