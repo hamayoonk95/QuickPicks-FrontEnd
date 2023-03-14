@@ -45,22 +45,22 @@ const MoviePage = () => {
   }, [token]);
 
   // Fetch available streaming services for the movie
-  // useEffect(() => {
-  //   console.log(movie);
-  //   const fetchData = async () => {
-  //     if (movie) {
-  //       const data = await getAvailability(movie.tmdb_id);
-  //       if (data.length > 0) {
-  //         setStreamingService(data[0].sources);
-  //         setIsLoading(false);
-  //       }
-  //     }
-  //   };
+  useEffect(() => {
+    console.log(movie);
+    const fetchData = async () => {
+      if (movie) {
+        const data = await getAvailability(movie.tmdb_id);
+        if (data.length > 0) {
+          setStreamingService(data[0].sources);
+          setIsLoading(false);
+        }
+      }
+    };
 
-  //   if (isLoading) {
-  //     fetchData();
-  //   }
-  // }, [movie, isLoading]);
+    if (isLoading) {
+      fetchData();
+    }
+  }, [movie, isLoading]);
 
   // Handle watch button click
   const handleWatch = async () => {
@@ -112,22 +112,15 @@ const MoviePage = () => {
       {/* If streaming services are available for the movie, displays them */}
       {movie ? (
         <div className="streaming-icons">
-          {/* {streamingService &&
+          {streamingService &&
           streamingService.map((service) => (
             <StreamingPlatformIcon
+              title={movie.title}
               key={service.source}
               src={service.source}
               link={service.link}
             />
-          ))} */}
-          <StreamingPlatformIcon
-            title={movie.title}
-            key={"abc"}
-            src={"netf"}
-            link={"//"}
-          />
-          {/* <StreamingPlatformIcon key={"aa"} src={"disney_plus"} link={"//"} />
-        <StreamingPlatformIcon key={"aab"} src={"vudu"} link={"//"} /> */}
+          ))}
         </div>
       ) : null}
 
