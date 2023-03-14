@@ -33,6 +33,7 @@ const MoviePage = () => {
       );
       const result = await response.json();
       setMovie(result);
+      console.log(movie)
     };
     fetchMovie();
   }, [id]);
