@@ -6,7 +6,7 @@ import prime from "../../assets/prime.png";
 import disneyPlus from "../../assets/disney+.png";
 import disney from "../../assets/disney.png";
 
-const StreamingPlatformIcon = ({src, link}) => {
+const StreamingPlatformIcon = ({src, link, title}) => {
     let icon;
     switch (src) {
         case 'netflix':
